@@ -1,0 +1,13 @@
+<footer class="site-footer">
+  <p>&copy; {{ "" | year }} {{ settings.artist_name }}</p>
+  <a class="site-footer__top" href="#top">Back to top ↑</a>
+</footer>
+
+<!-- Lightbox overlay, populated by js/main.js -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox__close" id="lightbox-close" aria-label="Close">&times;</button>
+  <button class="lightbox__prev" id="lightbox-prev" aria-label="Previous image">&larr;</button>
+  <img class="lightbox__image" id="lightbox-image" src="" alt="">
+  <p class="lightbox__caption" id="lightbox-caption"></p>
+  <button class="lightbox__next" id="lightbox-next" aria-label="Next image">&rarr;</button>
+</div>

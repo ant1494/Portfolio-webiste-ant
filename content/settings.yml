@@ -1,0 +1,23 @@
+site_title: "Carlos Ant | Portfolio"
+artist_name: "Carlos Ant"
+tagline: "Digital artist — concept design, illustration & comics"
+hero_image: "/static/images/placeholders/hero.svg"
+
+about_heading: "Greetings"
+about_text: >
+  My name is Carlos, and I'm a digital artist from Mexico with a background
+  in 2D illustration and concept art. I graduated from the University of
+  Morelia, where I studied Interactive Media. I've worked as a freelance
+  illustrator since 2020 across multiple mediums, including webtoons and
+  character illustration. Currently open to employment opportunities.
+
+resume_url: "https://drive.google.com/"
+contact_email: "hello@example.com"
+
+social_links:
+  - label: "Instagram"
+    url: "https://www.instagram.com/"
+  - label: "Discord"
+    url: "https://discordapp.com/"
+  - label: "LinkedIn"
+    url: "https://www.linkedin.com/"

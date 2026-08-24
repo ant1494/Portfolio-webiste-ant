@@ -1,0 +1,35 @@
+---
+layout: base.njk
+---
+<div id="top"></div>
+{% include "partials/hero.njk" %}
+
+{% for cat in categories %}
+  {% set pieces = artwork | byCategory(cat.slug) %}
+  {% if pieces.length %}
+    <section id="{{ cat.slug }}" class="gallery">
+      <div class="gallery__inner">
+        <h2 class="section-title">{{ cat.title }}</h2>
+        <div class="gallery__grid">
+          {% for piece in pieces %}
+            <button
+              class="gallery__item"
+              data-lightbox-index="{{ loop.index0 }}"
+              data-lightbox-group="{{ cat.slug }}"
+              aria-label="View {{ piece.title }}"
+            >
+              <img src="{{ piece.image }}" alt="{{ piece.title }}" loading="lazy">
+              <span class="gallery__item-title">{{ piece.title }}</span>
+            </button>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <script type="application/json" class="gallery-data" data-group="{{ cat.slug }}">
+      {{ pieces | dump | safe }}
+    </script>
+  {% endif %}
+{% endfor %}
+
+{% include "partials/about.njk" %}

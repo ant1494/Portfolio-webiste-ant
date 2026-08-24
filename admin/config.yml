@@ -1,0 +1,65 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded images live in the repo, and the URL they're served from.
+media_folder: "static/images/uploads"
+public_folder: "/static/images/uploads"
+
+publish_mode: simple
+
+collections:
+  # ---- Site-wide settings: one single editable form, not a list ----
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "general"
+        label: "General"
+        file: "content/settings.yml"
+        fields:
+          - { label: "Site title (browser tab)", name: "site_title", widget: "string" }
+          - { label: "Your name", name: "artist_name", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Hero image", name: "hero_image", widget: "image" }
+          - { label: "About section heading", name: "about_heading", widget: "string" }
+          - { label: "About text", name: "about_text", widget: "text" }
+          - { label: "Résumé link (Drive, PDF, etc.)", name: "resume_url", widget: "string", required: false }
+          - { label: "Contact email", name: "contact_email", widget: "string", required: false }
+          - label: "Social links"
+            name: "social_links"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+
+  # ---- Categories: add/remove/reorder whole gallery sections ----
+  - name: "categories"
+    label: "Gallery Categories"
+    folder: "content/categories"
+    create: true
+    identifier_field: "title"
+    fields:
+      - { label: "Section title", name: "title", widget: "string" }
+      - { label: "URL slug (no spaces)", name: "slug", widget: "string" }
+      - { label: "Display order", name: "order", widget: "number", default: 1 }
+
+  # ---- Artwork: the day-to-day upload workflow ----
+  - name: "artwork"
+    label: "Artwork"
+    folder: "content/artwork"
+    create: true
+    identifier_field: "title"
+    summary: "{{title}} — {{category}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - label: "Category"
+        name: "category"
+        widget: "relation"
+        collection: "categories"
+        search_fields: ["title"]
+        display_fields: ["title"]
+        value_field: "{{slug}}"
+      - { label: "Display order within section", name: "order", widget: "number", default: 1 }
+      - { label: "Caption (optional)", name: "caption", widget: "string", required: false }

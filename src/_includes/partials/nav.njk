@@ -1,0 +1,14 @@
+<header class="site-nav">
+  <div class="site-nav__inner">
+    <a class="site-nav__brand" href="/">{{ settings.artist_name }}</a>
+    <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav__links">
+      {% for cat in categories %}
+        <a href="#{{ cat.slug }}">{{ cat.title }}</a>
+      {% endfor %}
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>

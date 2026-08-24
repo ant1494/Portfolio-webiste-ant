@@ -1,0 +1,23 @@
+<section id="about" class="about">
+  <div class="about__inner">
+    <h2 class="section-title">{{ settings.about_heading }}</h2>
+    <p class="about__text">{{ settings.about_text }}</p>
+
+    <div class="about__actions">
+      {% if settings.resume_url %}
+        <a class="button button--primary" href="{{ settings.resume_url }}" target="_blank" rel="noopener">Download résumé</a>
+      {% endif %}
+      {% if settings.contact_email %}
+        <a class="button button--ghost" href="mailto:{{ settings.contact_email }}">{{ settings.contact_email }}</a>
+      {% endif %}
+    </div>
+
+    {% if settings.social_links %}
+      <ul class="about__social">
+        {% for link in settings.social_links %}
+          <li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</section>
