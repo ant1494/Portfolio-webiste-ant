@@ -449,3 +449,24 @@ body > footer,
   margin-left: auto !important;
   margin-right: auto !important;
 }
+
+/* Fix giant SVG logo sizing */
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Constrain header logo */
+.site-logo svg,
+.site-logo__mark {
+  height: 36px !important;
+  width: auto !important;
+  display: block;
+}
+
+/* Constrain hero logo */
+.homepage-hero__logo svg,
+.homepage-hero__logo {
+  max-width: 220px !important;
+  height: auto !important;
+}
