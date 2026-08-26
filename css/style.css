@@ -437,3 +437,15 @@ h1, h2, h3 { font-family: var(--font-nav); font-weight: 400; line-height: 1.15; 
   html { scroll-behavior: auto; }
   .social-icon:hover { animation: none; }
 }
+/* Center all main top-level sections horizontally */
+body > header,
+body > main,
+body > footer,
+.homepage-hero,
+.site-header__inner,
+.two-col-grid,
+.masonry,
+.project-grid {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
