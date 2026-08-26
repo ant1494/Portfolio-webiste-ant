@@ -55,7 +55,10 @@ h1, h2, h3 { font-family: var(--font-nav); font-weight: 400; line-height: 1.15; 
   position: sticky;
   top: 0;
   z-index: 40;
-  background: var(--color-paper);
+  background: rgba(255, 255, 255, 0.82); /* Semi-transparent white */
+  backdrop-filter: blur(12px);           /* Blurs content underneath */
+  -webkit-backdrop-filter: blur(12px);   /* Safari support */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   transition: background 0.2s ease;
 }
 
@@ -131,7 +134,10 @@ h1, h2, h3 { font-family: var(--font-nav); font-weight: 400; line-height: 1.15; 
 .site-header__toggle span { width: 22px; height: 2px; background: var(--color-ink); }
 
 @media (prefers-color-scheme: dark) {
-  .site-header { background: var(--color-ink); }
+  .site-header { 
+    background: rgba(17, 17, 17, 0.82); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
   .site-logo, .site-nav__link:not(.is-active) { color: var(--color-paper); }
   .site-header__toggle span { background: var(--color-paper); }
 }
