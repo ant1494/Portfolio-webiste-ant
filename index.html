@@ -1,62 +1,64 @@
-!doctype html
-html lang=en
-head
-  meta charset=utf-8 
-  meta name=viewport content=width=device-width, initial-scale=1.0 
-  titleComic Colorist Portfoliotitle
-  link rel=stylesheet href=style.css 
-  !-- Netlify Identity Widget (Required for Decap CMS login) --
-  script defer src=httpsidentity.netlify.comv1netlify-identity-widget.jsscript
-head
-body
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comic Colorist Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Netlify Identity Widget (Required for Decap CMS) -->
+  <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
 
-  !-- Airi Pan Style Fixed Header --
-  header class=site-header
-    div class=header-container
-      a href=# class=logoYOUR NAMEa
-      nav class=nav-links
-        a href=#workWorka
-        a href=#aboutAbouta
-        a href=#contactContacta
-      nav
-    div
-  header
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="#" class="logo">YOUR NAME</a>
+      <nav class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  !-- Main Portfolio Section --
-  main class=main-content
-    section id=work class=gallery-section
-      div class=gallery-grid
-        !-- Project Card 1 --
-        div class=project-card
-          img src=httpsvia.placeholder.com600x800 alt=Comic Work 1
-          div class=project-overlay
-            h3Project Title 01h3
-            pComic Coloringp
-          div
-        div
+  <!-- Main Portfolio Section -->
+  <main class="main-content">
+    <section id="work" class="gallery-section">
+      <div class="gallery-grid">
+        
+        <!-- Project Card 1 -->
+        <div class="project-card">
+          <img src="https://via.placeholder.com/600x800" alt="Comic Work 1" />
+          <div class="project-overlay">
+            <h3>Project Title 01</h3>
+            <p>Comic Coloring</p>
+          </div>
+        </div>
 
-        !-- Project Card 2 --
-        div class=project-card
-          img src=httpsvia.placeholder.com600x800 alt=Comic Work 2
-          div class=project-overlay
-            h3Project Title 02h3
-            pComic Coloringp
-          div
-        div
-      div
-    section
-  main
+        <!-- Project Card 2 -->
+        <div class="project-card">
+          <img src="https://via.placeholder.com/600x800" alt="Comic Work 2" />
+          <div class="project-overlay">
+            <h3>Project Title 02</h3>
+            <p>Comic Coloring</p>
+          </div>
+        </div>
 
-  script
+      </div>
+    </section>
+  </main>
+
+  <script>
     if (window.netlifyIdentity) {
-      window.netlifyIdentity.on(init, user = {
+      window.netlifyIdentity.on("init", (user) => {
         if (!user) {
-          window.netlifyIdentity.on(login, () = {
-            document.location.href = admin;
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
           });
         }
       });
     }
-  script
-body
-html
+  </script>
+</body>
+</html>
