@@ -2,8 +2,8 @@
   "use strict";
 
   /* ---------- Mobile nav toggle ---------- */
-  var toggle = document.querySelector(".site-nav__toggle");
-  var links = document.querySelector(".site-nav__links");
+  var toggle = document.querySelector(".site-header__toggle");
+  var links = document.querySelector(".site-nav");
   if (toggle && links) {
     toggle.addEventListener("click", function () {
       var isOpen = links.classList.toggle("is-open");
@@ -15,6 +15,17 @@
         toggle.setAttribute("aria-expanded", "false");
       });
     });
+  }
+
+  /* ---------- Homepage hero slideshow ---------- */
+  var slides = document.querySelectorAll("[data-slide]");
+  if (slides.length > 1) {
+    var current = 0;
+    setInterval(function () {
+      slides[current].classList.remove("is-active");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("is-active");
+    }, 5000);
   }
 
   /* ---------- Lightbox ---------- */
@@ -71,7 +82,7 @@
     render();
   }
 
-  document.querySelectorAll(".gallery__item").forEach(function (btn) {
+  document.querySelectorAll("[data-lightbox-group]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var group = btn.dataset.lightboxGroup;
       var index = parseInt(btn.dataset.lightboxIndex, 10) || 0;

@@ -1,0 +1,27 @@
+---
+layout: base.njk
+pagination:
+  data: personalWork
+  size: 1
+  alias: project
+permalink: "/personal-work/{{ project.slug }}/"
+eleventyComputed:
+  title: "{{ project.title }}"
+---
+<div class="back-bar">
+  <a href="/personal-work/" class="back-button">Back</a>
+</div>
+
+<h1 class="section-title" style="text-align:center; margin-top: 1rem;">{{ project.title }}</h1>
+
+<div class="project-gallery">
+  {% for shot in project.gallery %}
+    <button class="project-gallery__item" data-lightbox-index="{{ loop.index0 }}" data-lightbox-group="project-{{ project.slug }}" aria-label="View image {{ loop.index }}">
+      <img src="{{ shot.image }}" alt="{{ shot.caption or project.title }}" loading="lazy">
+    </button>
+  {% endfor %}
+</div>
+
+<script type="application/json" class="gallery-data" data-group="project-{{ project.slug }}">
+  {{ project.gallery | dump | safe }}
+</script>

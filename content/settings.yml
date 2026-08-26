@@ -1,7 +1,9 @@
 site_title: "Carlos Ant | Portfolio"
 artist_name: "Carlos Ant"
-tagline: "Digital artist — concept design, illustration & comics"
-hero_image: "/static/images/placeholders/hero.svg"
+tagline: "Illustration / Concept / Comic"
+
+hero_images:
+  - "/static/images/placeholders/hero.svg"
 
 about_heading: "Greetings"
 about_text: >
@@ -10,14 +12,25 @@ about_text: >
   Morelia, where I studied Interactive Media. I've worked as a freelance
   illustrator since 2020 across multiple mediums, including webtoons and
   character illustration. Currently open to employment opportunities.
+about_portrait: "/static/images/placeholders/portrait.svg"
 
 resume_url: "https://drive.google.com/"
 contact_email: "hello@example.com"
 
+comic_credit_text: "Colors for Krampus & the Witch, written and drawn by Nico and Parker."
+comic_credit_links:
+  - label: "Nico"
+    url: "https://www.instagram.com/"
+  - label: "Parker"
+    url: "https://www.instagram.com/"
+
 social_links:
   - label: "Instagram"
     url: "https://www.instagram.com/"
+    icon: "instagram"
   - label: "Discord"
     url: "https://discordapp.com/"
+    icon: "discord"
   - label: "LinkedIn"
     url: "https://www.linkedin.com/"
+    icon: "linkedin"

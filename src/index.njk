@@ -1,35 +1,15 @@
 ---
 layout: base.njk
+permalink: /
 ---
-<div id="top"></div>
-{% include "partials/hero.njk" %}
-
-{% for cat in categories %}
-  {% set pieces = artwork | byCategory(cat.slug) %}
-  {% if pieces.length %}
-    <section id="{{ cat.slug }}" class="gallery">
-      <div class="gallery__inner">
-        <h2 class="section-title">{{ cat.title }}</h2>
-        <div class="gallery__grid">
-          {% for piece in pieces %}
-            <button
-              class="gallery__item"
-              data-lightbox-index="{{ loop.index0 }}"
-              data-lightbox-group="{{ cat.slug }}"
-              aria-label="View {{ piece.title }}"
-            >
-              <img src="{{ piece.image }}" alt="{{ piece.title }}" loading="lazy">
-              <span class="gallery__item-title">{{ piece.title }}</span>
-            </button>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-
-    <script type="application/json" class="gallery-data" data-group="{{ cat.slug }}">
-      {{ pieces | dump | safe }}
-    </script>
-  {% endif %}
-{% endfor %}
-
-{% include "partials/about.njk" %}
+<section class="homepage-hero">
+  {% for img in settings.hero_images %}
+    <img class="homepage-hero__slide{% if loop.first %} is-active{% endif %}" src="{{ img }}" alt="" data-slide loading="{% if loop.first %}eager{% else %}lazy{% endif %}">
+  {% endfor %}
+  <div class="homepage-hero__center">
+    <svg class="homepage-hero__logo" viewBox="0 0 220 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="{{ settings.artist_name }}">
+      <text x="0" y="60" font-family="var(--font-nav)" font-size="70" fill="currentColor">CA</text>
+    </svg>
+    <p class="homepage-hero__tag">{{ settings.tagline }}</p>
+  </div>
+</section>

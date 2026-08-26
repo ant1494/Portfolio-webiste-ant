@@ -1,14 +1,27 @@
-<header class="site-nav">
-  <div class="site-nav__inner">
-    <a class="site-nav__brand" href="/">{{ settings.artist_name }}</a>
-    <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-logo" href="/" aria-label="{{ settings.artist_name }} — home">
+      <!--
+        Placeholder logo mark. Swap this <svg> for your real logo's paths
+        (keep fill="currentColor" on every shape) and it will react to
+        dark mode automatically via the CSS rule on .site-logo in style.css.
+      -->
+      <svg class="site-logo__mark" viewBox="0 0 120 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+        <text x="0" y="34" font-family="var(--font-nav)" font-size="30" fill="currentColor">CA</text>
+      </svg>
+    </a>
+
+    <button class="site-header__toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-    <nav class="site-nav__links">
-      {% for cat in categories %}
-        <a href="#{{ cat.slug }}">{{ cat.title }}</a>
+
+    <nav class="site-nav">
+      {% for item in nav %}
+        <a
+          href="{{ item.href }}"
+          class="site-nav__link{% if page.url == item.href %} is-active{% endif %}"
+        >{{ item.label }}</a>
       {% endfor %}
-      <a href="#about">About</a>
     </nav>
   </div>
 </header>

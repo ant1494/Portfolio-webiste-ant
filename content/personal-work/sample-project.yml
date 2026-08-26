@@ -1,0 +1,9 @@
+title: "Yellow Mech"
+slug: "yellow-mech"
+cover_image: "/static/images/placeholders/artwork-01.svg"
+order: 1
+gallery:
+  - image: "/static/images/placeholders/artwork-01.svg"
+    caption: "Concept exploration, digital painting"
+  - image: "/static/images/placeholders/artwork-02.svg"
+    caption: "Color variant"

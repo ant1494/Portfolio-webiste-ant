@@ -6,14 +6,32 @@
   <title>{{ settings.site_title }}</title>
   <meta name="description" content="{{ settings.tagline }}">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!--
+    Kalmansk is a purchased/self-hosted font, not on a public CDN.
+    Drop your font files at static/fonts/kalmansk.woff2 (and .woff as a
+    fallback) and this will pick them up automatically. Until then the
+    site falls back to the system serif defined in --font-nav below.
+  -->
+  <style>
+    @font-face {
+      font-family: "Kalmansk";
+      src: url("/static/fonts/kalmansk.woff2") format("woff2"),
+           url("/static/fonts/kalmansk.woff") format("woff");
+      font-display: swap;
+    }
+  </style>
 
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><text y=%2224%22 font-size=%2224%22>🐜</text></svg>">
+
+  <script>
+    if (window.location.hash && /invite_token|recovery_token|confirmation_token|email_change_token/.test(window.location.hash)) {
+      window.location.href = "/admin/" + window.location.hash;
+    }
+  </script>
 </head>
 <body>
+  <div id="top"></div>
   {% include "partials/nav.njk" %}
   <main>
     {{ content | safe }}
