@@ -81,7 +81,7 @@ h1, h2, h3 { font-family: var(--font-nav); font-weight: 400; line-height: 1.15; 
    ============================================================ */
 .site-logo__mark {
   display: block;
-  height: 36px;
+  height: 56px;
   aspect-ratio: 120 / 48; /* Tells the browser how wide to make it */
   background-color: currentColor;
   mask-image: url('../static/images/name-logo.png');
@@ -469,14 +469,6 @@ body > footer,
 svg {
   max-width: 100%;
   height: auto;
-}
-
-/* Constrain header logo */
-.site-logo svg,
-.site-logo__mark {
-  height: 36px !important;
-  width: auto !important;
-  display: block;
 }
 
 /* Constrain hero logo */
