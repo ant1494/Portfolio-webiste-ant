@@ -21,12 +21,12 @@
     }
   </style>
 
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><text y=%2224%22 font-size=%2224%22>🐜</text></svg>">
 
   <script>
     if (window.location.hash && /invite_token|recovery_token|confirmation_token|email_change_token/.test(window.location.hash)) {
-      window.location.href = "/admin/" + window.location.hash;
+      window.location.href = "{{ '/admin/' | url }}" + window.location.hash;
     }
   </script>
 </head>
@@ -37,6 +37,6 @@
     {{ content | safe }}
   </main>
   {% include "partials/footer.njk" %}
-  <script src="/js/main.js" defer></script>
+  <script src="{{ '/js/main.js' | url }}" defer></script>
 </body>
 </html>

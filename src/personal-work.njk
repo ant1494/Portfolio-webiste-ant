@@ -4,8 +4,8 @@ permalink: /personal-work/
 ---
 <div class="project-grid">
   {% for project in personalWork %}
-    <a class="project-card" href="/personal-work/{{ project.slug }}/">
-      <img src="{{ project.cover_image }}" alt="{{ project.title }}" loading="lazy">
+    <a class="project-card" href="{{ ('/personal-work/' + project.slug + '/') | url }}">
+      <img src="{{ project.cover_image | url }}" alt="{{ project.title }}" loading="lazy">
       <span class="project-card__title">{{ project.title }}</span>
     </a>
   {% endfor %}

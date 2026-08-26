@@ -16,11 +16,11 @@ permalink: /comic-work/
 <div class="two-col-grid">
   {% for piece in comicWork %}
     <button class="two-col-grid__item" data-lightbox-index="{{ loop.index0 }}" data-lightbox-group="comic-work" aria-label="View {{ piece.title }}">
-      <img src="{{ piece.image }}" alt="{{ piece.title }}" loading="lazy">
+      <img src="{{ piece.image | url }}" alt="{{ piece.title }}" loading="lazy">
     </button>
   {% endfor %}
 </div>
 
 <script type="application/json" class="gallery-data" data-group="comic-work">
-  {{ comicWork | dump | safe }}
+  {{ comicWork | withPrefixedImages | dump | safe }}
 </script>

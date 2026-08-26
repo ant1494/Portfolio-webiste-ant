@@ -1,6 +1,6 @@
 <header class="site-header">
   <div class="site-header__inner">
-    <a class="site-logo" href="/" aria-label="{{ settings.artist_name }} — home">
+    <a class="site-logo" href="{{ '/' | url }}" aria-label="{{ settings.artist_name }} — home">
       <!--
         Placeholder logo mark. Swap this <svg> for your real logo's paths
         (keep fill="currentColor" on every shape) and it will react to
@@ -18,9 +18,14 @@
     <nav class="site-nav">
       {% for item in nav %}
         <a
-          href="{{ item.href }}"
+          href="{{ item.href | url }}"
           class="site-nav__link{% if page.url == item.href %} is-active{% endif %}"
-        >{{ item.label }}</a>
+        >
+          {{ item.label }}
+          <svg class="site-nav__squiggle" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,6 Q8,0 16,6 T32,6 T48,6 T64,6 T80,6 T100,6" />
+          </svg>
+        </a>
       {% endfor %}
     </nav>
   </div>

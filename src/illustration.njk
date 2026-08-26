@@ -9,11 +9,11 @@ permalink: /illustration/
 <div class="masonry">
   {% for piece in illustration %}
     <button class="masonry__item" data-lightbox-index="{{ loop.index0 }}" data-lightbox-group="illustration" aria-label="View {{ piece.title }}">
-      <img src="{{ piece.image }}" alt="{{ piece.title }}" loading="lazy">
+      <img src="{{ piece.image | url }}" alt="{{ piece.title }}" loading="lazy">
     </button>
   {% endfor %}
 </div>
 
 <script type="application/json" class="gallery-data" data-group="illustration">
-  {{ illustration | dump | safe }}
+  {{ illustration | withPrefixedImages | dump | safe }}
 </script>

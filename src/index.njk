@@ -4,7 +4,7 @@ permalink: /
 ---
 <section class="homepage-hero">
   {% for img in settings.hero_images %}
-    <img class="homepage-hero__slide{% if loop.first %} is-active{% endif %}" src="{{ img }}" alt="" data-slide loading="{% if loop.first %}eager{% else %}lazy{% endif %}">
+    <img class="homepage-hero__slide{% if loop.first %} is-active{% endif %}" src="{{ img | url }}" alt="" data-slide loading="{% if loop.first %}eager{% else %}lazy{% endif %}">
   {% endfor %}
   <div class="homepage-hero__center">
     <svg class="homepage-hero__logo" viewBox="0 0 220 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="{{ settings.artist_name }}">
