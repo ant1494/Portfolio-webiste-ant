@@ -3,10 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Comic Colorist Portfolio</title>
+  <title>Comic Colorist & Artist Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Netlify Identity Widget (Required for Decap CMS) -->
-  <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -22,43 +20,42 @@
     </div>
   </header>
 
-  <!-- Main Portfolio Section -->
   <main class="main-content">
+    <!-- Gallery Section -->
     <section id="work" class="gallery-section">
       <div class="gallery-grid">
         
-        <!-- Project Card 1 -->
         <div class="project-card">
-          <img src="https://via.placeholder.com/600x800" alt="Comic Work 1" />
+          <img src="images/sample1.jpg" alt="Comic Work 1" />
           <div class="project-overlay">
-            <h3>Project Title 01</h3>
-            <p>Comic Coloring</p>
+            <h3>Comic Page 01</h3>
+            <p>Colors / Lineart</p>
           </div>
         </div>
 
-        <!-- Project Card 2 -->
         <div class="project-card">
-          <img src="https://via.placeholder.com/600x800" alt="Comic Work 2" />
+          <img src="images/sample2.jpg" alt="Comic Work 2" />
           <div class="project-overlay">
-            <h3>Project Title 02</h3>
-            <p>Comic Coloring</p>
+            <h3>Illustration 02</h3>
+            <p>Digital Art</p>
           </div>
         </div>
 
       </div>
     </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <h2>About</h2>
+      <p>Comic book colorist and digital artist specializing in comic pages, character design, and visual storytelling.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <h2>Contact</h2>
+      <p>Interested in collaborating or commissioning work? Reach out at <a href="mailto:yourname@email.com">yourname@email.com</a>.</p>
+    </section>
   </main>
 
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", (user) => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
 </body>
 </html>
