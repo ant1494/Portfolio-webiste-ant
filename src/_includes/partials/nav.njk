@@ -1,14 +1,11 @@
 <header class="site-header">
   <div class="site-header__inner">
     <a class="site-logo" href="{{ '/' | url }}" aria-label="{{ settings.artist_name }} — home">
-      <!--
-        Placeholder logo mark. Swap this <svg> for your real logo's paths
-        (keep fill="currentColor" on every shape) and it will react to
-        dark mode automatically via the CSS rule on .site-logo in style.css.
+      <!-- 
+        Empty span. The CSS mask-image will pull your PNG from /static/images/
+        and color it using currentColor (light/dark mode ready).
       -->
-      <svg class="site-logo__mark" viewBox="0 0 120 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-        <text x="0" y="34" font-family="var(--font-nav)" font-size="30" fill="currentColor">CA</text>
-      </svg>
+      <span class="site-logo__mark"></span>
     </a>
 
     <button class="site-header__toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -22,9 +19,6 @@
           class="site-nav__link{% if page.url == item.href %} is-active{% endif %}"
         >
           {{ item.label }}
-          <svg class="site-nav__squiggle" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,6 Q8,0 16,6 T32,6 T48,6 T64,6 T80,6 T100,6" />
-          </svg>
         </a>
       {% endfor %}
     </nav>
