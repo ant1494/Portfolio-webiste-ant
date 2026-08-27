@@ -281,7 +281,7 @@ h1, h2, h3 { font-family: var(--font-nav); font-weight: 400; line-height: 1.15; 
   transform: translateY(6px);
   /* 👇 Animation */
   opacity: 0; /* Starts hidden */
-  animation: tagFadeIn 0.2 ease 0.7s forwards; /* Appears after brushstroke reveals */
+  animation: tagFadeIn 0.4s ease 1.0s forwards;
 }
 .homepage-hero__tag::before {
   content: "";
@@ -294,7 +294,7 @@ h1, h2, h3 { font-family: var(--font-nav); font-weight: 400; line-height: 1.15; 
   z-index: -1;
   /* 👇 Animation */
   clip-path: inset(0 100% 0 0); /* Starts fully hidden (right side clipped) */
-  animation: brushstrokeReveal 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.1 forwards;
+  animation: brushstrokeReveal 0.5s cubic-bezier(0.65, 0, 0.35, 1) 0.7s forwards;
   /* Starts after logo finishes (1s delay + 0.2s buffer) */
 }
 
