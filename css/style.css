@@ -250,7 +250,20 @@ h1, h2, h3 { font-family: var(--font-nav); font-weight: 400; line-height: 1.15; 
   gap: 0.6rem;
 }
 
-.homepage-hero__logo { width: clamp(160px, 22vw, 260px); color: #ffffff; }
+.homepage-hero__logo {
+  display: block;
+  width: clamp(160px, 22vw, 260px);
+  aspect-ratio: 1652 / 1196;
+  background-color: #ffffff;
+  -webkit-mask-image: url("../static/images/logo.png");
+  mask-image: url("../static/images/logo.png");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
 
 .homepage-hero__tag {
   position: relative;

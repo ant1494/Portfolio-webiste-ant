@@ -7,9 +7,7 @@ permalink: /
     <img class="homepage-hero__slide{% if loop.first %} is-active{% endif %}" src="{{ img | url }}" alt="" data-slide loading="{% if loop.first %}eager{% else %}lazy{% endif %}">
   {% endfor %}
   <div class="homepage-hero__center">
-    <svg class="homepage-hero__logo" viewBox="0 0 220 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="{{ settings.artist_name }}">
-      <text x="0" y="60" font-family="var(--font-nav)" font-size="70" fill="currentColor">CA</text>
-    </svg>
+    <span class="homepage-hero__logo" role="img" aria-label="{{ settings.artist_name }}"></span>
     <p class="homepage-hero__tag">{{ settings.tagline }}</p>
   </div>
 </section>
