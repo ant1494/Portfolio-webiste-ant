@@ -7,7 +7,9 @@ permalink: /
     <img class="homepage-hero__slide{% if loop.first %} is-active{% endif %}" src="{{ img | url }}" alt="" data-slide loading="{% if loop.first %}eager{% else %}lazy{% endif %}">
   {% endfor %}
   <div class="homepage-hero__center">
-    <span class="homepage-hero__logo" role="img" aria-label="{{ settings.artist_name }}"></span>
+    <span class="homepage-hero__tag">
+  <span class="hero-tag__text">Illustration / Concept / Comic</span>
+</span>
     <p class="homepage-hero__tag">{{ settings.tagline }}</p>
   </div>
 </section>

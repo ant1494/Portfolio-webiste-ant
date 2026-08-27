@@ -279,8 +279,13 @@ h1, h2, h3 { font-family: var(--font-nav); font-weight: 400; line-height: 1.15; 
   font-size: 0.85rem;
   color: #ffffff;
   transform: translateY(6px);
+  /* No opacity or animation here — the tag is always visible */
+}
+
+.hero-tag__text {
+  display: inline-block;
   opacity: 0;
-  animation: tagFadeIn 0.4s ease 1.6s forwards; /* 👈 Changed to 1.6s delay */
+  animation: tagFadeIn 0.4s ease 1.6s forwards;
 }
 
 .homepage-hero__tag::before {
