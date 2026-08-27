@@ -7,6 +7,7 @@
   --color-ink-soft: #5a5a5a;
   --color-line: #e6e6e6;
   --color-accent: #e06060;
+  --color-accent-2: #b21818;
   --color-footer: #000000;
 
   /* Type: Kalmansk drives nav/headings/labels, Inter drives body copy.
@@ -237,6 +238,7 @@ h1, h2, h3 { font-family: var(--font-nav); font-weight: 400; line-height: 1.15; 
   object-fit: cover;
   opacity: 0;
   transition: opacity 1.2s ease;
+  z-index: 1; /* 👈 This ensures slides sit below the content */
 }
 .homepage-hero__slide.is-active { opacity: 1; }
 
@@ -248,6 +250,7 @@ h1, h2, h3 { font-family: var(--font-nav); font-weight: 400; line-height: 1.15; 
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
+  z-index: 10; /* 👈 This ensures content sits ABOVE the background slides */
 }
 
 .homepage-hero__logo {
@@ -281,18 +284,11 @@ h1, h2, h3 { font-family: var(--font-nav); font-weight: 400; line-height: 1.15; 
   right: 0;
   bottom: 0;
   left: 0;
-  background: var(--color-accent);
+  background: var(--color-accent-2);  /* 👈 Changed to your new variable */
   z-index: -1;
-  /* 👇 This creates the brushstroke effect with hard edges */
   clip-path: polygon(
-    0% 10%,   /* top-left slightly cut in */
-    8% 0%,    /* top-left corner jagged */
-    92% 0%,   /* top-right corner jagged */
-    100% 10%, /* top-right slightly cut in */
-    95% 90%,  /* bottom-right jagged */
-    85% 100%, /* bottom-right corner */
-    15% 100%, /* bottom-left corner */
-    5% 90%    /* bottom-left jagged */
+    0% 10%, 8% 0%, 92% 0%, 100% 10%,
+    95% 90%, 85% 100%, 15% 100%, 5% 90%
   );
 }
 
