@@ -255,7 +255,7 @@ h1, h2, h3 { font-family: var(--font-nav); font-weight: 400; line-height: 1.15; 
 
 .homepage-hero__logo {
   display: block;
-  width: clamp(160px, 22vw, 260px);
+   width: clamp(200px, 28vw, 340px);;
   aspect-ratio: 1652 / 1196;
   background-color: #ffffff;
   -webkit-mask-image: url("../static/images/name-logo.png");
@@ -266,16 +266,22 @@ h1, h2, h3 { font-family: var(--font-nav); font-weight: 400; line-height: 1.15; 
   mask-repeat: no-repeat;
   -webkit-mask-position: center;
   mask-position: center;
+  opacity: 0; /* Starts hidden */
+  animation: heroLogoFadeIn 1s ease forwards;
 }
 
 .homepage-hero__tag {
   position: relative;
-  padding: 0.4rem 1.1rem;
+  padding: 0.25rem 1.1rem;
   font-family: var(--font-nav);
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: 0.85rem;
   color: #ffffff;
+  transform: translateY(6px);
+  /* 👇 Animation */
+  opacity: 0; /* Starts hidden */
+  animation: tagFadeIn 0.8s ease 2.2s forwards; /* Appears after brushstroke reveals */
 }
 .homepage-hero__tag::before {
   content: "";
@@ -284,12 +290,12 @@ h1, h2, h3 { font-family: var(--font-nav); font-weight: 400; line-height: 1.15; 
   right: 0;
   bottom: 0;
   left: 0;
-  background: var(--color-accent-2);  /* 👈 Changed to your new variable */
+  background: var(--color-accent-2);
   z-index: -1;
-  clip-path: polygon(
-    0% 10%, 8% 0%, 92% 0%, 100% 10%,
-    95% 90%, 85% 100%, 15% 100%, 5% 90%
-  );
+  /* 👇 Animation */
+  clip-path: inset(0 100% 0 0); /* Starts fully hidden (right side clipped) */
+  animation: brushstrokeReveal 0.8s cubic-bezier(0.65, 0, 0.35, 1) 1.2s forwards;
+  /* Starts after logo finishes (1s delay + 0.2s buffer) */
 }
 
 /* ============================================================
@@ -499,4 +505,26 @@ svg {
 .homepage-hero__logo {
   max-width: 220px !important;
   height: auto !important;
+}
+
+/* ============================================================
+   HERO ENTRANCE ANIMATIONS
+   ============================================================ */
+
+/* Fade in for the logo */
+@keyframes heroLogoFadeIn {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Left-to-right reveal for the brushstroke rectangle */
+@keyframes brushstrokeReveal {
+  0% { clip-path: inset(0 100% 0 0); }
+  100% { clip-path: inset(0 0% 0 0); }
+}
+
+/* Fade in for the text */
+@keyframes tagFadeIn {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
