@@ -277,9 +277,23 @@ h1, h2, h3 { font-family: var(--font-nav); font-weight: 400; line-height: 1.15; 
 .homepage-hero__tag::before {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: var(--color-accent);
   z-index: -1;
+  /* 👇 This creates the brushstroke effect with hard edges */
+  clip-path: polygon(
+    0% 10%,   /* top-left slightly cut in */
+    8% 0%,    /* top-left corner jagged */
+    92% 0%,   /* top-right corner jagged */
+    100% 10%, /* top-right slightly cut in */
+    95% 90%,  /* bottom-right jagged */
+    85% 100%, /* bottom-right corner */
+    15% 100%, /* bottom-left corner */
+    5% 90%    /* bottom-left jagged */
+  );
 }
 
 /* ============================================================
