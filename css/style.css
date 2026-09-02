@@ -39,11 +39,11 @@ a, button {
   cursor: url("../static/images/cursor-hover.png") 0 0, pointer;
 }
 
-p, li {
+p {
   cursor: url("../static/images/cursor-text.png") 16 16, text;
 }
 
-p a, li a, p button, li button {
+p a, p button {
   cursor: url("../static/images/cursor-hover.png") 0 0, pointer;
 }
 
