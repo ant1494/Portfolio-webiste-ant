@@ -39,6 +39,9 @@ a, button {
   cursor: url("../static/images/cursor-hover.png") 0 0, pointer;
 }
 
+p, li {
+  cursor: url("../static/images/cursor-text.png") 0 0, text;
+}
 
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
