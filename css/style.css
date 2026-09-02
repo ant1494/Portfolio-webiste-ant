@@ -219,7 +219,7 @@ h1, h2, h3 { font-family: var(--font-nav); font-weight: 400; line-height: 1.15; 
 .back-bar {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 1.5rem var(--gutter) 0;
+  padding: 1.5rem var(--gutter) 3rem;
   display: flex;
   justify-content: flex-end;
 }
@@ -350,8 +350,8 @@ h1, h2, h3 { font-family: var(--font-nav); font-weight: 400; line-height: 1.15; 
    ============================================================ */
 .comic-credit {
   max-width: var(--content-width);
-  margin: 0 auto;
-  padding: 2.5rem var(--gutter) 0;
+  margin: 2.5rem auto 0;
+  padding: 0 var(--gutter);
   color: var(--color-ink-soft);
 }
 .comic-credit a { color: var(--color-accent); border-bottom: 1px solid transparent; }
