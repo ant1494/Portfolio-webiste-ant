@@ -503,12 +503,6 @@ svg {
   height: auto;
 }
 
-/* Constrain hero logo */
-.homepage-hero__logo svg,
-.homepage-hero__logo {
-  max-width: 220px !important;
-  height: auto !important;
-}
 
 /* ============================================================
    HERO ENTRANCE ANIMATIONS
