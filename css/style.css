@@ -43,6 +43,10 @@ p, li {
   cursor: url("../static/images/cursor-text.png") 16 16, text;
 }
 
+p a, li a, p button, li button {
+  cursor: url("../static/images/cursor-hover.png") 0 0, pointer;
+}
+
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; background: none; border: none; color: inherit; }
@@ -507,10 +511,10 @@ body > footer,
 }
 
 /* Fix giant SVG logo sizing */
-svg {
+/*svg {
   max-width: 100%;
   height: auto;
-}
+}/*
 
 
 /* ============================================================
