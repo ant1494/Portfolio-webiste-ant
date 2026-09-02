@@ -8,9 +8,6 @@ permalink: "/personal-work/{{ project.slug }}/"
 eleventyComputed:
   title: "{{ project.title }}"
 ---
-<div class="back-bar">
-  <a href="{{ '/personal-work/' | url }}" class="back-button">Back</a>
-</div>
 
 <h1 class="section-title" style="text-align:center; margin-top: 1rem;">{{ project.title }}</h1>
 
@@ -20,6 +17,10 @@ eleventyComputed:
       <img src="{{ shot.image | url }}" alt="{{ shot.caption or project.title }}" loading="lazy">
     </button>
   {% endfor %}
+</div>
+
+<div class="back-bar">
+  <a href="{{ '/personal-work/' | url }}" class="back-button">Back</a>
 </div>
 
 <script type="application/json" class="gallery-data" data-group="project-{{ project.slug }}">

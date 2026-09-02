@@ -2,9 +2,6 @@
 layout: base.njk
 permalink: /comic-work/
 ---
-<div class="back-bar">
-  <a href="#top" class="back-button">Back</a>
-</div>
 
 <p class="comic-credit">
   {{ settings.comic_credit_text }}
@@ -19,6 +16,10 @@ permalink: /comic-work/
       <img src="{{ piece.image | url }}" alt="{{ piece.title }}" loading="lazy">
     </button>
   {% endfor %}
+</div>
+
+<div class="back-bar">
+  <a href="#top" class="back-button">Back</a>
 </div>
 
 <script type="application/json" class="gallery-data" data-group="comic-work">
