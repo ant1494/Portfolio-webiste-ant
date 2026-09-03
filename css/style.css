@@ -28,7 +28,7 @@
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
 
   --nav-letter-spacing: 0.08em;
-  --nav-font-size: 0.85rem;
+  --nav-font-size: 1.2rem;
 
   --content-width: 1240px;
   --gutter: clamp(1.25rem, 3vw, 3rem);
