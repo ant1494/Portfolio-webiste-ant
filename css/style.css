@@ -309,7 +309,7 @@ h1, h2, h3 { font-family: var(--font-nav); font-weight: 400; line-height: 1.15; 
   font-family: var(--font-nav);
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  font-size: 0.5rem;
+  font-size: 0.69rem;
   color: #ffffff;
   transform: translateY(6px);
   /* No opacity or animation here — the tag is always visible */
