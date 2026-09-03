@@ -2,7 +2,7 @@
    CUSTOM FONTS 
    ============================================================ */
 
-*@font-face {
+@font-face {
   font-family: 'Kalmansk';
   src: url('../static/fonts/kalmansk-regular.otf') format('opentype');
   font-weight: 400;

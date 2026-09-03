@@ -12,14 +12,13 @@
     fallback) and this will pick them up automatically. Until then the
     site falls back to the system serif defined in --font-nav below.
   -->
-  <style>
-    @font-face {
-      font-family: "Kalmansk";
-      src: url("/static/fonts/kalmansk.woff2") format("woff2"),
-           url("/static/fonts/kalmansk.woff") format("woff");
-      font-display: swap;
-    }
-  </style>
+	<style>
+	  @font-face {
+		font-family: "Kalmansk";
+		src: url("/static/fonts/kalmansk-regular.otf") format("opentype");
+		font-display: swap;
+			}
+	</style>
 
   <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><text y=%2224%22 font-size=%2224%22>🐜</text></svg>">
