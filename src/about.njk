@@ -20,11 +20,11 @@ permalink: /about/
   <div class="about-split__text">
     <h2 class="section-title">{{ settings.about_heading }}</h2>
     <p>{{ settings.about_text }}</p>
+	{% if settings.contact_email %}
+      <p><a class="email-link" href="mailto:{{ settings.contact_email }}">{{ settings.contact_email }}</a></p>
+    {% endif %}
     {% if settings.resume_url %}
       <p><a class="email-link" href="{{ settings.resume_url }}" target="_blank" rel="noopener">Download résumé</a></p>
-    {% endif %}
-    {% if settings.contact_email %}
-      <p><a class="email-link" href="mailto:{{ settings.contact_email }}">{{ settings.contact_email }}</a></p>
     {% endif %}
   </div>
 </div>
