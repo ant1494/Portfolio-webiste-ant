@@ -9,6 +9,14 @@
   --color-accent: #e06060;
   --color-accent-2: #b21818;
   --color-footer: #000000;
+  
+  @font-face {
+  font-family: 'Kalmansk';
+  src: url('../static/fonts/kalmansk-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
   /* Type: Kalmansk drives nav/headings/labels, Inter drives body copy.
      Change either family here to test alternatives site-wide. */
