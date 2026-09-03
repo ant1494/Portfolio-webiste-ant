@@ -3,12 +3,7 @@ layout: base.njk
 permalink: /comic-work/
 ---
 
-<p class="comic-credit">
-  {{ settings.comic_credit_text }}
-  {% for link in settings.comic_credit_links %}
-    <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>{% if not loop.last %}, {% endif %}
-  {% endfor %}
-</p>
+<p class="comic-credit">{{ settings.comic_credit_text | safe }}</p>
 
 <div class="two-col-grid">
   {% for piece in comicWork %}

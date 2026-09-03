@@ -13,12 +13,10 @@ about_portrait: "/static/images/placeholders/portrait.svg"
 resume_url: "https://drive.google.com/file/d/1XWXn_ybODA1wEPnbr8HSs9fXZNy98KqS/view"
 contact_email: "antsonboots@gmail.com"
 
-comic_credit_text: "Below is a selection of my work as a comic book colorist in Krampus & the Witch. Pencils, inks, and lettering by @nicod_five; story and script by @localparkerx."
-comic_credit_links:
-  - label: "@nicod_five"
-    url: "https://www.instagram.com/nicod_five/"
-  - label: "@localparkerx"
-    url: "https://www.instagram.com/localparkerx/"
+comic_credit_text: >
+  Below is a selection of my work as a comic book colorist in Krampus & the Witch.
+  Pencils, inks, and lettering by <a href="https://www.instagram.com/nicod_five/" target="_blank" rel="noopener">@nicod_five</a>;
+  story and script by <a href="https://www.instagram.com/localparkerx/" target="_blank" rel="noopener">@localparkerx</a>.
 
 social_links:
   - label: "Email"
