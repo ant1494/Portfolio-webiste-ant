@@ -1,4 +1,19 @@
 module.exports = function (eleventyConfig) {
+	
+	const fs = require("fs");
+	const path = require("path");
+	
+	eleventyConfig.addShortcode("inlineSvg", function (filename) {
+	const filePath = path.join(__dirname, "static/images/footer-icons", filename);
+	let svg = fs.readFileSync(filePath, "utf8");
+	svg = svg.replace(/<\?xml[^>]*\?>\s*/, "");
+	// Auto-swap any hardcoded color in the file for currentColor,
+	// so you never have to hand-edit fill/stroke values yourself.
+	svg = svg.replace(/fill="(?!none)[^"]*"/gi, 'fill="currentColor"');
+	svg = svg.replace(/stroke="(?!none)[^"]*"/gi, 'stroke="currentColor"');
+	return svg;
+	});
+	
   // Files that should be copied to the final site untouched.
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");

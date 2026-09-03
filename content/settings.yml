@@ -7,30 +7,29 @@ hero_images:
 
 about_heading: "Greetings"
 about_text: >
-  My name is Carlos, and I'm a digital artist from Mexico with a background
-  in 2D illustration and concept art. I graduated from the University of
-  Morelia, where I studied Interactive Media. I've worked as a freelance
-  illustrator since 2020 across multiple mediums, including webtoons and
-  character illustration. Currently open to employment opportunities.
+  My name is Carlos, and I’m a digital artist from Mexico with a background in 2D illustration and concept art. I graduated from the University of Morelia, where I studied Interactive Media. I have worked as a freelance illustrator since 2020 and have dabbled in multiple mediums, including webtoons and character illustrations.Currently seeking for employment opportunities.If you have any questions or inquiries, feel free to contact me at:
 about_portrait: "/static/images/placeholders/portrait.svg"
 
-resume_url: "https://drive.google.com/"
-contact_email: "hello@example.com"
+resume_url: "https://drive.google.com/file/d/1XWXn_ybODA1wEPnbr8HSs9fXZNy98KqS/view"
+contact_email: "antsonboots@gmail.com"
 
-comic_credit_text: "Colors for Krampus & the Witch, written and drawn by Nico and Parker."
+comic_credit_text: "Below is a selection of my work as a comic book colorist in Krampus & the Witch. Pencils, inks, and lettering by @nicod_five; story and script by @localparkerx."
 comic_credit_links:
-  - label: "Nico"
-    url: "https://www.instagram.com/"
-  - label: "Parker"
-    url: "https://www.instagram.com/"
+  - label: "@nicod_five"
+    url: "https://www.instagram.com/nicod_five/"
+  - label: "@localparkerx"
+    url: "https://www.instagram.com/localparkerx/"
 
 social_links:
+  - label: "Email"
+    url: "mailto:antsonboots@gmail.com"
+    icon: "envelope.svg"
   - label: "Instagram"
-    url: "https://www.instagram.com/"
-    icon: "instagram"
-  - label: "Discord"
-    url: "https://discordapp.com/"
-    icon: "discord"
-  - label: "LinkedIn"
-    url: "https://www.linkedin.com/"
-    icon: "linkedin"
+    url: "https://www.instagram.com/carlos.app/"
+    icon: "instagram-logo.svg"
+  - label: "X Social"
+    url: "https://x.com/carlosant_art/"
+    icon: "x-logo.svg"
+  - label: "Tumblr"
+    url: "https://www.tumblr.com/antsonboots"
+    icon: "tumblr-logo.svg"
