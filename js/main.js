@@ -79,14 +79,15 @@
   }
 
   function step(delta) {
-    var items = groups[currentGroup] || [];
-    if (!items.length) return;
-    currentIndex = (currentIndex + delta + items.length) % items.length;
+	var items = groups[currentGroup] || [];
+	if (!items.length) return;
+	currentIndex = (currentIndex + delta + items.length) % items.length;
+	imageEl.style.transition = "none";
 	imageEl.classList.add("is-fading");
-	window.setTimeout(function () {
-		render();
-		imageEl.classList.remove("is-fading");
-		}, 800);
+	render();
+	void imageEl.offsetWidth; // force reflow so "transition: none" actually registers
+	imageEl.style.transition = "";
+	imageEl.classList.remove("is-fading");
   }
 
   document.querySelectorAll("[data-lightbox-group]").forEach(function (btn) {
