@@ -57,12 +57,15 @@
     currentIndex = index;
     render();
     lightbox.hidden = false;
-    document.body.style.overflow = "hidden";
+	void lightbox.offsetWidth;
+	lightbox.classList.add("is-visible");
+	document.body.style.overflow = "hidden";
     closeBtn.focus();
   }
 
   function close() {
-    lightbox.hidden = true;
+	lightbox.classList.remove("is-visible")
+	lightbox.hidden = true;
     document.body.style.overflow = "";
   }
 
@@ -79,7 +82,11 @@
     var items = groups[currentGroup] || [];
     if (!items.length) return;
     currentIndex = (currentIndex + delta + items.length) % items.length;
-    render();
+	imageEl.classList.add("is-fading");
+	window.setTimeout(function () {
+		render();
+		imageEl.classList.remove("is-fading");
+		}, 800);
   }
 
   document.querySelectorAll("[data-lightbox-group]").forEach(function (btn) {
