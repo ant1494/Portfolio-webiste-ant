@@ -3,7 +3,7 @@ artist_name: "Carlos Ant"
 tagline: "Illustration / Concept / Comic"
 
 hero_images:
-  - "/static/images/hero/hero-01.png"
+  - "/static/images/hero/hero-01.jpg"
 
 about_heading: "Welcome"
 about_text: >
