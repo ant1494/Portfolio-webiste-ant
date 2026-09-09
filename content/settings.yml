@@ -4,6 +4,9 @@ tagline: "Illustration / Concept / Comic"
 
 hero_images:
   - "/static/images/hero/hero-01.png"
+  - "/static/images/hero/hero-02.png"
+  - "/static/images/hero/hero-03.png"
+  - "/static/images/hero/hero-04.png"
 
 about_heading: "Welcome"
 about_text: >
