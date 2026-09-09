@@ -7,6 +7,7 @@ hero_images:
   - "/static/images/hero/hero-02.png"
   - "/static/images/hero/hero-03.png"
   - "/static/images/hero/hero-04.png"
+  - "/static/images/hero/hero-05.png"
 
 about_heading: "Welcome"
 about_text: >
