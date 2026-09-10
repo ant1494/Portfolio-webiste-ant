@@ -3,8 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ settings.site_title }}</title>
-  <meta name="description" content="{{ settings.tagline }}">
+  
+<!--SEO things-->
+  <title>{% if title %}{{ title }} — {{ settings.artist_name }}{% else %}{{ settings.site_title }}{% endif %}</title>
+<meta name="description" content="{{ description or settings.site_description }}">
+<meta name="robots" content="{{ robots or 'index, follow' }}">
+
+<link rel="canonical" href="{{ settings.site_url }}{{ page.url | url }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% if title %}{{ title }} — {{ settings.artist_name }}{% else %}{{ settings.site_title }}{% endif %}">
+  <meta property="og:description" content="{{ description or settings.site_description }}">
+  <meta property="og:url" content="{{ settings.site_url }}{{ page.url | url }}">
+  <meta property="og:image" content="{{ settings.site_url }}{{ settings.og_image | url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">

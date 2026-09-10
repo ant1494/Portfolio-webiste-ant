@@ -1,0 +1,9 @@
+---
+permalink: robots.txt
+eleventyExcludeFromCollections: true
+---
+User-agent: *
+Disallow: {{ '/admin/' | url }}
+Disallow: {{ '/studio-work/' | url }}
+
+Sitemap: {{ settings.site_url }}{{ '/sitemap.xml' | url }}
